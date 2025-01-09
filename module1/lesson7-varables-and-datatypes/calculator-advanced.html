@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <style>
+        .box {
+            padding: 20px 10px;
+            border: 1px solid #cccccc;
+        }
+
+        #display {
+            padding: 8px;
+            border: 1px solid #cccccc;
+            text-align: right;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .buttons button {
+            border-radius: 100px;
+            cursor: pointer;
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #E6E6E6;
+            background-color: #F3F3F3;
+        }
+        .buttons button:hover {
+            background: #dee1e3;
+            border-color: #d3e3fd;
+        }
+        .equal {
+            background-color: blue !important;
+            color: white;
+            border: 1px solid blue !important;;
+        }
+        .equal:hover {
+            background: #4285f4 !important;
+            border-color: #4285f4 !important;
+        }
+        .func {
+            background-color: #e5edff !important;
+            border: 1px solid #d3e3fd !important;
+        }
+        .func:hover {
+            background-color: #d3e3fd !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div id="display">0</div>
+        <div class="buttons">
+            <button class="func">(</button>
+            <button class="func">)</button>
+            <button class="func">%</button>
+            <button class="func" onclick="clearCalculator()">AC</button>
+        </div>
+        <div class="buttons">
+            <button onclick="addNumber(7)">7</button>
+            <button onclick="addNumber(8)">8</button>
+            <button onclick="addNumber(9)">9</button>
+            <button onclick="addOperator('/')" class="func">/</button>
+        </div>
+        <div class="buttons">
+            <button onclick="addNumber(4)">4</button>
+            <button onclick="addNumber(5)">5</button>
+            <button onclick="addNumber(6)">6</button>
+            <button onclick="addOperator('*')" class="func">X</button>
+        </div>
+        <div class="buttons">
+            <button onclick="addNumber(1)">1</button>
+            <button onclick="addNumber(2)">2</button>
+            <button onclick="addNumber(3)">3</button>
+            <button onclick="addOperator('-')" class="func">-</button>
+        </div>
+        <div class="buttons">
+            <button onclick="addNumber(0)">0</button>
+            <button>.</button>
+            <button class="equal" onclick="equal()">=</button>
+            <button onclick="addOperator('+')" class="func">+</button>
+        </div>
+    </div>
+    <script>
+        const display = document.getElementById("display");
+        let firstNumber = '';
+        let secondNumber = '';
+        let operator;
+        function addNumber(number) {
+            if (display.innerText !== '0') {
+                display.innerHTML += number;
+            } else {
+                display.innerHTML = number;
+            }
+            if (operator) {
+                secondNumber += number + "";
+            } else {
+                firstNumber = display.innerText;
+            }
+            console.log(firstNumber, secondNumber);
+        }
+        function addOperator(o) {
+            if (firstNumber) {
+                operator = o;
+                display.innerHTML = firstNumber + operator + secondNumber;
+            }
+        }
+
+        function equal() {
+            const result = eval(firstNumber + operator + secondNumber);
+            display.innerText = eval(firstNumber + operator + secondNumber);
+            firstNumber = result;
+            secondNumber = '';
+        }
+
+        function clearCalculator() {
+            console.log('clear');
+            display.innerText = 0;
+            firstNumber = '';
+            secondNumber = '';
+        }
+    </script>
+</body>
+</html>

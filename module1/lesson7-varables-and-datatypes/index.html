@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7: Biến và Kiểu dữ liệu</title>
+</head>
+<body>
+<h1>Bài 7: Biến và Kiểu dữ liệu</h1>
+<script>
+    // 1, internal: nhúng trực tiếp
+    // 2, external: nhúng file js ngoài
+    // 3, inline: nhúng trực tiếp vào thẻ HTML
+    // var x = y = z = 10;
+    // x = 10; // Gán giá trị sử dụng toán tử gán (=)
+    // console.log(x); // undefined
+    // y = 20;
+    // console.log(y); // undefined
+    // Toán tử số học (+, -, *, /, %)
+    // z = x % y;
+    // console.log(z); // 0
+    // {
+    //     var fullName = 'Cường';
+    // }
+    // console.log(fullName); // Cường
+    // function sayHello() {
+    // function scope
+    // var fullName = 'Cường';
+    // var fullName = 'Đức';
+    // console.log(fullName); // Cường
+    // block scope
+    // let fullName = 'Quân';
+    // fullName = 'Huy';
+    // console.log(fullName);
+    // }
+
+    // sayHello();
+    // console.log(fullName); // Lỗi
+
+    // function viduVar() {
+    // function scope
+    //     for (var i = 0; i < 10; i++) {
+    //         console.log('I love you ' + i);
+    //     }
+    //     console.log(i);
+    // }
+    // viduVar();
+    // function viduLet() {
+    //     for (let i = 0; i < 10; i++) {
+    //         // block scope
+    //         console.log('I love you ' + i);
+    //     }
+    //     console.log(i); // Lỗi
+    // }
+
+    // viduLet();
+    // var radius = 8;
+    // // const PI = 3.1459;
+    // // PI = 3.1459;
+    // var area = Math.PI * radius * radius;
+    // console.log(area.toFixed(2));
+    // const firstName = 'Anh'; // String (Chuỗi)
+    // const middleName = `Bá Tuấn`; // Template literals, ` (backtick)
+    // const lastName = "Nguyễn"; // String (Chuỗi)
+    // const fullName = `${lastName} ${middleName} ${firstName}`; // Template literals, ` (backtick)
+    // console.log(lastName + " " + middleName + " " + firstName);
+    // console.log(fullName);
+    // // const lyrics = "Hà Nội mùa thu, cây cơm nguội vàng, cây bàng lá đỏ" +
+    // //     "Nằm kề bên nhau, phố xưa nhà cổ, mái ngói thâm nâu" +
+    // //     "Hà Nội mùa thu, mùa thu Hà Nội";
+    // const lyrics = `Hà Nội mùa thu, cây cơm nguội vàng, cây bàng lá đỏ
+    // Nằm kề bên nhau, phố xưa nhà cổ, mái ngói thâm nâu
+    // Hà Nội mùa thu, mùa thu Hà Nội ${x + y}`;
+    // console.log(lyrics);
+    // const isMarried = Boolean(0); // Boolean: true/false
+    // console.log('Đã lấy vợ chưa? ' + isMarried);
+    // var person = null;
+    // console.log(person);
+    // Symbol, BigInt
+    // Object
+    // const person = {};
+    // console.log(typeof x);
+    // console.log(typeof isMarried);
+    // console.log(typeof lyrics);
+    // Toán tử logic
+    // console.log(true && true);
+    // console.log(true && false);
+    // console.log(!true); // false
+    // console.log(true || false); // true
+    // Toán tử số học (+, -,,...)
+    // console.log(9 % 2 === 0);
+    // Toán tử so sánh
+    // console.log(x === y);
+    // console.log("Chill Guy" === "Chill Guy"); // true
+    // console.log(12 >= x); // true
+</script>
+</body>
+</html>

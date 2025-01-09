@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 5: Git & HTML</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th {
+
+        }
+
+        td {
+            border: 1px solid #ccc;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /*sub, small {*/
+        /*    font-weight: normal;*/
+        /*    font-size: 14px;*/
+        /*}*/
+        span {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<h1>Lesson 5: Git & HTML</h1>
+<p>Đây là một đoạn văn bản nhưng mà <small>này bé hơn</small>, chữ này <strong>in đậm</strong>, chữ này <em>in nghiêng</em>, chữ này <span>tùy biến</span>, chữ này bị <div>xuống dòng</div></p>
+<!--<form action="https://www.facebook.com/search/people/">-->
+<!--    <fieldset>-->
+<!--        <legend>Facebook search</legend>-->
+<!--        <input type="text" name="q" id="" value="Real Madrid">-->
+<!--&lt;!&ndash;        <input type="submit" value="Tìm kiếm">&ndash;&gt;-->
+<!--        <button type="submit"><img src="button.gif"></button>-->
+<!--        <input type="reset" value="Reset">-->
+<!--    </fieldset>-->
+<!--</form>-->
+
+<!--<form action="https://www.youtube.com/results" method="post">-->
+<!--    <fieldset>-->
+<!--        <legend>Youtube search</legend>-->
+<!--        <input type="text" name="q" id="">-->
+<!--        <input type="submit" value="Tìm kiếm">-->
+<!--&lt;!&ndash;        <button type="button" onclick="alert('Xin chao!')"><i class="fa-solid fa-magnifying-glass"></i></button>&ndash;&gt;-->
+<!--    </fieldset>-->
+<!--</form>-->
+<!--<label for="js">Chạm vào tôi đi</label>-->
+<!--<form action="">-->
+<!--    <p>Giới tính của bạn là gì?</p>-->
+<!--    <label><input type="radio" name="sex" id="">Nam</label>-->
+<!--    <label><input type="radio" name="sex" id="">Nữ</label>-->
+<!--    <label><input type="radio" name="sex" id="" checked>Gay</label>-->
+<!--    <label><input type="radio" name="sex" id="">Less</label>-->
+<!--    <p>Ngôn ngữ yêu thích của bạn là gì?</p>-->
+<!--    <input type="checkbox" name="hobbies" id=""> HTML<br>-->
+<!--    <label><input type="checkbox" name="hobbies" id=""> CSS</label>-->
+<!--    <div>-->
+<!--        <input type="checkbox" name="hobbies" id="js"> JavaScript-->
+<!--    </div>-->
+<!--    <select name="" id="">-->
+<!--        <option value="HN">Hà Nội</option>-->
+<!--        <option value="SG">Sài gòn</option>-->
+<!--    </select>-->
+<!--    <label for="notes">Ghi chú</label>-->
+<!--    <textarea rows="10" cols="50" id="notes"></textarea>-->
+<!--</form>-->
+<!--<table border="1">-->
+<!--    <tr>-->
+<!--        <th>TOP</th>-->
+<!--        <th>Họ tên</th>-->
+<!--        <th>Điểm</th>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>1</td>-->
+<!--        <td>Đạt Lê</td>-->
+<!--        <td>10.000</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>2</td>-->
+<!--        <td>Quân Nguyễn</td>-->
+<!--        <td>9.999</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>3</td>-->
+<!--        <td>Nhất Lê</td>-->
+<!--        <td>8.000</td>-->
+<!--    </tr>-->
+<!--</table>-->
+<!--<table border="1">-->
+<!--    <tr>-->
+<!--        <th colspan="3" style="background-color: orange">Thời khóa biểu</th>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <th style="color: blue">Ngày</th>-->
+<!--        <th style="color: red">Thứ</th>-->
+<!--        <th>Môn học</th>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>03/01/2024</td>-->
+<!--        <td>T6</td>-->
+<!--        <td>Git & HTML</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>06/01/2024</td>-->
+<!--        <td>T2</td>-->
+<!--        <td>Form & Table</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td rowspan="2">07/01/2024</td>-->
+<!--        <td rowspan="2">T3</td>-->
+<!--        <td>Tổng quan JavaScript</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>Anh hùng bàn phím</td>-->
+<!--    </tr>-->
+<!--</table>-->
+<table>
+    <tr>
+        <th>Thứ hai</th>
+        <th>Thứ ba</th>
+        <th>Thứ tư</th>
+        <th>Thứ năm</th>
+        <th>Thứ sáu</th>
+        <th>Thứ bảy</th>
+        <th>Chủ nhật</th>
+    </tr>
+    <tr>
+        <td>30 <sub>30</sub></td>
+        <td>31 <sub>1/12</sub></td>
+        <td>1 <sub style="color: #cf0000">2/12</sub><br>
+            <small>Tết dương lịch</small>
+        </td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>14</td>
+        <td>15</td>
+        <td>16</td>
+        <td>17</td>
+        <td>18</td>
+        <td>19</td>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>21</td>
+        <td>22</td>
+        <td>23</td>
+        <td>24</td>
+        <td>25</td>
+        <td>26</td>
+    </tr>
+    <tr>
+        <td>27</td>
+        <td>28</td>
+        <td>29</td>
+        <td>30</td>
+        <td>31</td>
+        <td>1</td>
+        <td>2</td>
+    </tr>
+</table>
+</body>
+</html>

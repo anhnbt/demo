@@ -1,0 +1,15 @@
+input {
+    padding: 8px;
+    margin-bottom: 8px;
+    margin-right: 4px;
+    outline-color: #cf0000;
+}
+
+button {
+    background-color: #cf0000;
+    color: white;
+    border: none;
+    padding: 8px;
+    margin-bottom: 8px;
+}
+

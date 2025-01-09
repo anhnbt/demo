@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method="get">
+    <table>
+        <tr>
+            <th><label for="amount">Amount</label></th>
+            <th><label for="From">From Currency</label></th>
+            <th><label for="To">To Currency</label></th>
+        </tr>
+        <tr>
+            <td><input type="number" id="amount"></td>
+            <td>
+                <select id="From">
+                    <option>USD</option>
+                    <option>Viet Nam</option>
+                </select>
+            </td>
+            <td>
+                <select id="To">
+                    <option>Viet Nam</option>
+                    <option>USD</option>
+                </select>
+            </td>
+            <td>
+                <button type="button" style="background-color: fuchsia" onclick="changeMoney()">Convert</button>
+            </td>
+        </tr>
+        <tr>
+            <td><p id="result">Result </p></td>
+        </tr>
+    </table>
+</form>
+</body>
+<script>
+    function changeMoney() {
+        let amount = document.getElementById("amount").value;
+        let from = document.getElementById("From").value;
+        let to = document.getElementById("To").value;
+        let usd = 25384;
+        let result;
+        if (from === "USD" && to === "Viet Nam") {
+            result = amount * usd;
+        } else if (from === "Viet Nam" && to === "USD") {
+            result = amount / usd;
+        }
+        document.getElementById("result").innerHTML = "Result: " + result.toFixed(2);
+    }
+</script>
+</html>
