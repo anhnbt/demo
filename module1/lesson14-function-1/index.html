@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 14: Function 1</title>
+</head>
+<body>
+<script>
+    {
+        // alert('Hello World!!');
+        // console.log, document.write, prompt, parseInt, confirm, parseFloat, Math.pow, Math.random();
+        // console.log(new Date());
+        // hoisting
+        // function show(str) {
+        //     console.log(str);
+        // }
+        // console.log(show('Hang'));
+
+        // arrow function
+        // const show = (str) => console.log(str);
+        // show('Hang');
+
+        // function sayHello() {
+        //     console.log('Hello World!');
+        // }
+        // sayHello();
+        // const hi = sayHello;
+        // hi();
+        // spread operators
+        // function sum(...numbers) {
+        //     return numbers.reduce((acc, currentValue) => acc + currentValue, 0);
+        // }
+        // console.log(sum(1, 2, 3, 4)); //
+        // console.log('Day', 'la', 'doi', 'so')
+
+        // function isEven(number) {
+        //     return number % 2 === 0;
+        // }
+        //
+        // for (let i = 0; i < 100; i++) {
+        //     if (isEven(i)) {
+        //         console.log(i);
+        //     }
+        // }
+
+        // function swap(a, b) {
+        //     const temp = a;
+        //     a = b;
+        //     b = temp;
+        //     console.log('bien a, b trong ham swap: ', a, b);
+        // }
+        // const first = 10;
+        // const second = 20;
+        // //truoc khi goi ham
+        // console.log(first, second);
+        // swap(first, second);
+        // Sau khi goi ham
+        // console.log(first, second); //
+
+        // global ()
+        const firstName = 'Code';
+        const lastName = 'Gym';
+
+        // console.log(firstName, lastName);
+        function sayHello(firstName, lastName) {
+            // local
+            console.log(firstName, lastName);
+        }
+
+        sayHello('Anh', 'Tuan');
+        console.log(firstName, lastName);
+        let isMarried = true;
+        console.log(isMarried);
+    }
+
+</script>
+</body>
+</html>

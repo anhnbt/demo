@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 12: Array 1</title>
+</head>
+<body>
+<p id="turn">Turn: X</p>
+<div id="board"></div>
+<script>
+    // const student1 = 'Cường';
+    // const student2 = 'Duc';
+    // const student3 = 'Quan';
+    // ....
+    // console.log(student1);
+    // Cách 1: Array Literals
+    // const students = [];
+    // students.push("Nhat");
+    // students.push("Dat");
+    // students.push("Huy");
+    // students.push(1);
+    // students.push(22);
+    // students.push(9);
+    // students.reverse();
+    // callback function
+    // students.sort(function (a, b) {
+    //     return b - a;
+    // });
+    // document.write(students.join("↔"))
+    // document.write("<ul>");
+    // document.write(students.map(function (item) {
+    //     return `<li>${item}</li>`;
+    // }).join(""));
+    // document.write("</ul>");
+    // students[students.length] = 'Huy Me';
+    // console.log(students[students.length - 1]);
+    // console.log(students[students.length - 3]);
+    // students[-1] = 'Nhat';
+    // console.log(students['length']); // 6
+    // console.log(students['-1']);
+    // students[-1] = 'Dat';
+
+    // console.log(students);
+    // ten_mang[chi_so]; arr[index]
+    // console.log(students[0]);
+    // console.log(students[students.length - 1]);
+    // students[0] = 'Cường Hoàng';
+    // students[2] = 'Nhất';
+    // console.log(students.join("😍"));
+    // // Cách 2: từ khóa new
+    // const cars = new Array('BMW', 'VinFast');
+    // console.log(cars.length);
+    // const numbers = new Array('BMW'); //
+    // const numbers = [10];
+    // console.log('Độ dài của mảng:', numbers.length); // 1
+    // for (let i = 0; i < numbers.length; i++) {
+    //     console.log(`Phần tử thứ ${i} có giá trị là ${numbers[i]}`);
+    // }
+    // students.forEach(function (item) {
+    //     console.log(item);
+    // });
+    // const newArrays = cars.concat(students);
+    // document.write(newArrays.join("↔"))
+
+
+    // const cars = new Array('Mercedes', 'Audi', 'BMW', 'VinFast');
+    // cars.push("Audi");
+    // cars.pop();
+    // const item = cars.pop();
+    // cars.pop();
+    // console.log(cars.length);
+    // cars.unshift('Porsche');
+    // cars.unshift('Vios');
+    // cars.shift();
+    // document.write(cars.toString());
+    const board = 10;
+    // Khoi tao mang 2 chieu
+    const caroBoard = new Array(board);
+    for (let i = 0; i < board; i++) {
+        caroBoard[i] = new Array(board);
+    }
+    // gan gia tri cho mang
+    for (let i = 0; i < board; i++) {
+        for (let j = 0; j < caroBoard[i].length; j++) {
+            caroBoard[i][j] = 0;
+        }
+    }
+    let firstPlayer = 'X';
+    let secondPlayer = 'O';
+    let turn = firstPlayer;
+    drawBoard();
+    function drawBoard() {
+        let table = '<table>';
+        for (let i = 0; i < caroBoard.length; i++) {
+            table += '<tr>';
+            for (let j = 0; j < caroBoard[i].length; j++) {
+                const color = caroBoard[i][j] === 'X' ? 'red' : caroBoard[i][j] !== 0 ? 'blue' : 'black';
+                if (caroBoard[i][j] !== 0) {
+                    table += `<td><button style="color: ${color}" onclick="check(${i}, ${j})" disabled="disabled">${caroBoard[i][j]}</button></td>`;
+                } else {
+                    table += `<td><button style="color: ${color}" onclick="check(${i}, ${j})">${caroBoard[i][j]}</button></td>`;
+                }
+                // table += "<td><button onclick='check(" + i + ", " + j + ")'>" + caroBoard[i][j] + "</button></td>"
+            }
+            table += '</tr>';
+        }
+        table += '</table>';
+        document.getElementById('board').innerHTML = table;
+    }
+
+    function check(row, column) {
+        caroBoard[row][column] = turn;
+        if (turn === firstPlayer) {
+            turn = secondPlayer;
+        } else {
+            turn = firstPlayer;
+        }
+        document.getElementById("turn").innerText = `Turn: ${turn}`;
+        drawBoard();
+    }
+</script>
+</body>
+</html>

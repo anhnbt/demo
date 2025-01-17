@@ -3,25 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <title>Game Puzzle</title>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 </head>
 <body>
-<div style="text-align: center">
-    <img src="images/funny-cat1_part1x1.jpg" height="auto" width="600" onclick="changeImg(this)"/><br>
-    <img src="images/monkey_part2x1.jpg" height="auto" width="600" onclick="changeImg(this)"/><br>
-    <img src="images/funny-cat1_part3x1.jpg" height="auto" width="600" onclick="changeImg(this)"/><br>
-    <img src="images/panda_swap_part4x1.jpg" height="auto" width="600" onclick="changeImg(this)"/><br>
-    <img src="images/funny-cat1_part5x1.jpg" height="auto" width="600" onclick="changeImg(this)"/><br>
+<div class="game" style="text-align: center">
+    <img class="animate__animated animate__fadeInDown" id="img1" src="images/funny-cat1_part1x1.jpg" height="auto" width="600" onclick="changeImg(this)"/><br>
+    <img class="animate__animated animate__fadeInLeft" id="img2" src="images/monkey_part2x1.jpg" height="auto" width="600" onclick="changeImg(this)"/><br>
+    <img class="animate__animated animate__fadeInRight"  id="img3" src="images/funny-cat1_part3x1.jpg" height="auto" width="600" onclick="changeImg(this)"/><br>
+    <img class="animate__animated animate__fadeIn"  id="img4" src="images/panda_swap_part4x1.jpg" height="auto" width="600" onclick="changeImg(this)"/><br>
+    <img class="animate__animated animate__fadeInUp"  id="img5" src="images/funny-cat1_part5x1.jpg" height="auto" width="600" onclick="changeImg(this)"/><br>
 </div>
 <script>
     function changeImg(img) {
-        console.log('changeImg', img.src);
-        // Part1
-        if (img.src.includes("funny-cat1_part1x1")) {
+        // Loại bỏ class trước đó nếu có
+        img.classList.remove('animate__animated', 'animate__bounce');
+
+        // Thêm lại class và hiệu ứng mới
+        img.classList.add('animate__animated', 'animate__bounce');
+
+        // Đảm bảo rằng hiệu ứng chỉ chạy khi click và xóa các class sau khi hiệu ứng hoàn tất
+        setTimeout(() => {
+            img.classList.remove('animate__animated', 'animate__bounce');
+        }, 1000); // Thời gian của hiệu ứng (1000ms = 1s)
+        const img1 = document.getElementById('img1');
+        const img2 = document.getElementById('img2');
+        const img3 = document.getElementById('img3');
+        const img4 = document.getElementById('img4');
+        const img5 = document.getElementById('img5');
+        if (img.src.includes("funny-cat1_part1x1")) { // part 1
             img.src = 'images/monkey_part1x1.jpg';
         } else if (img.src.includes("monkey_part1x1")) {
             img.src = 'images/panda_swap_part1x1.jpg';
         } else if (img.src.includes("panda_swap_part1x1")) {
             img.src = 'images/funny-cat1_part1x1.jpg';
+        } else if (img.src.includes("funny-cat1_part2x1")) { // part 2
+            img.src = 'images/monkey_part2x1.jpg';
+        } else if (img.src.includes("monkey_part2x1")) {
+            img.src = 'images/panda_swap_part2x1.jpg';
+        } else if (img.src.includes("panda_swap_part2x1")) {
+            img.src = 'images/funny-cat1_part2x1.jpg';
+        } else if (img.src.includes("funny-cat1_part3x1")) { // part 3
+            img.src = 'images/monkey_part3x1.jpg';
+        } else if (img.src.includes("monkey_part3x1")) {
+            img.src = 'images/panda_swap_part3x1.jpg';
+        } else if (img.src.includes("panda_swap_part3x1")) {
+            img.src = 'images/funny-cat1_part3x1.jpg';
+        } else if (img.src.includes("funny-cat1_part4x1")) { // part 4
+            img.src = 'images/monkey_part4x1.jpg';
+        } else if (img.src.includes("monkey_part4x1")) {
+            img.src = 'images/panda_swap_part4x1.jpg';
+        } else if (img.src.includes("panda_swap_part4x1")) {
+            img.src = 'images/funny-cat1_part4x1.jpg';
+        } else if (img.src.includes("funny-cat1_part5x1")) { // part 5
+            img.src = 'images/monkey_part5x1.jpg';
+        } else if (img.src.includes("monkey_part5x1")) {
+            img.src = 'images/panda_swap_part5x1.jpg';
+        } else if (img.src.includes("panda_swap_part5x1")) {
+            img.src = 'images/funny-cat1_part5x1.jpg';
+        }
+        const isCat = (img1.src.includes('cat'))
+            && img2.src.includes('cat')
+            && img3.src.includes('cat')
+            && img4.src.includes('cat')
+            && img5.src.includes('cat');
+        const isMonkey = (img1.src.includes('monkey'))
+            && img2.src.includes('monkey')
+            && img3.src.includes('monkey')
+            && img4.src.includes('monkey')
+            && img5.src.includes('monkey');
+        const isPanda = (img1.src.includes('panda'))
+            && img2.src.includes('panda')
+            && img3.src.includes('panda')
+            && img4.src.includes('panda')
+            && img5.src.includes('panda');
+        if (isCat || isPanda || isMonkey) {
+            img1.style["boxShadow"] = "0 0 5px red";
+            img2.style["boxShadow"] = "0 0 5px red";
+            img3.style["boxShadow"] = "0 0 5px red";
+            img4.style["boxShadow"] = "0 0 5px red";
+            img5.style["boxShadow"] = "0 0 5px red";
+        } else {
+            img1.style["boxShadow"] = "none";
+            img2.style["boxShadow"] = "none";
+            img3.style["boxShadow"] = "none";
+            img4.style["boxShadow"] = "none";
+            img5.style["boxShadow"] = "none";
         }
     }
 </script>

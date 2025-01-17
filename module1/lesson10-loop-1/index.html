@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 10: Loop 1</title>
+</head>
+<body>
+<h1>Lesson 10: Loop 1</h1>
+<script>
+    // debugger;
+    // scope (phạm vi)
+    // for (var i = 0; i < 3; i++) {
+    //     document.write("I love you "+i+" <br>");
+    // }
+    // document.write("I love you "+i+" <br>");
+    // for (let i = 1, j = 10; i < 10; i++, j--) {
+    //     document.write(`${i}*${j}=${i * j}<br>`);
+    // }
+    // let text = prompt("Nhap ky tu bat ky, nhap 'q' de thoat ra: ")
+    // while (text != 'q') {
+    //     console.log(text);
+    //     text = prompt("Nhap lai ky tu, nhap 'q' de thoat ra: ");
+    // }
+    // for (let i = 1; i <= 100; i++) {
+    //     document.write(`<hr style='width: ${i}%'>`)
+    // }
+    // let count = 1;
+    // while (count <= 100) {
+    //     document.write(`<hr style='width: ${count}%'>`)
+    //     // count++;
+    //     count = count + 1;
+    // }
+    // let count = 1;
+    // do {
+    //     document.write("I love you<br>");
+    //     count++;
+    // } while (count <= 10);
+    let number;
+    let sum = 0;
+    do {
+        number = +prompt("Nhap so nguyen bat ky: ");
+        sum += number;
+    } while (false);
+    document.write("Sum: " + sum);
+</script>
+</body>
+</html>
