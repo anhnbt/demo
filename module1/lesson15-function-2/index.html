@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 15: Function 2</title>
+</head>
+<body>
+<h2>Add New Product</h2>
+<form action="">
+    <input id="productName" type="text">
+    <button type="button" onclick="addProduct()">Add</button>
+</form>
+<h2>Display All Product</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Product Name</th>
+        <th id="totalProduct">0 products</th>
+    </tr>
+    </thead>
+    <tbody id="data"></tbody>
+</table>
+<script>
+    const products = ['Sony', 'Nokia', 'Apple', 'Xiaomi'];
+
+    function displayProduct() {
+        const data = document.getElementById("data");
+        let rows = '';
+        for (let i = 0; i < products.length; i++) {
+            rows += `<tr>
+                <td>${products[i]}</td>
+                <td>
+                    <button type="button" onclick="editProduct(${i})">Edit</button>
+                    <button type="button" onclick="deleteProduct(${i})">Delete</button>
+                </td>
+            </tr>`;
+        }
+        data.innerHTML = rows;
+
+        // Hien thi sl san pham
+        document.getElementById("totalProduct").innerText = products.length + ' products';
+    }
+
+    displayProduct();
+
+    function addProduct() {
+        const productName = document.getElementById("productName").value;
+        products.push(productName);
+        displayProduct();
+    }
+
+    function deleteProduct(index) {
+        const productName = products[index];
+        if (confirm("Do you want to delete " + productName + " product?")) {
+            products.splice(index, 1);
+            displayProduct();
+        }
+    }
+
+    function editProduct(index) {
+        const productName = prompt("Nhập tên sản phẩm", products[index]);
+        products[index] = productName;
+        displayProduct();
+    }
+</script>
+</body>
+</html>
