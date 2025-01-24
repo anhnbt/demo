@@ -23,36 +23,37 @@
 
     var person1 = new Person("Anh", "Nguyen Ba Tuan", 29);
     var sv1 = new SinhVien("Dat", "Le", 25);
-    console.log(person1);
-    console.log(sv1);
-
-    // Cách 2: Singleton
-    const Car = function (model, year, color) {
-        this.model = model;
-        this.year = year;
-        this.color = color;
-    }
+    // const a = 'age';
+    // console.log(person1[a]);
+    // console.log(sv1);
     //
-    const car1 = new Car("BMW", 2000, 'black');
-    // console.log(car1);
-
-    // Object literals
-    // const car1 = {model: 'BWM', year: 2000, color: 'Black'};
-    // const car2 = {model: 'BWM', date: 2000, color: 'Black'};
-    // console.log(car2);
-    // Car.prototype.dongCo = '1.5';
-    // console.log(car1.dongCo);
-
-    const cars = [];
-    cars.push(car1);
-    cars.push(new Car("Audi", 2020, "white"));
-    console.log(cars);
-    let table = `<table border="1"><tr><th>Hãng</th><th>Năm sản xuất</th><th>Màu</th></tr>`;
-    for (let i = 0; i < cars.length; i++) {
-        table += `<tr><td>${cars[i].model}</td><td>${cars[i].year}</td><td>${cars[i].color}</td></tr>`
-    }
-    table += "</table>";
-    document.getElementById("table").innerHTML = table;
+    // // Cách 2: Singleton
+    // const Car = function (model, year, color) {
+    //     this.model = model;
+    //     this.year = year;
+    //     this.color = color;
+    // }
+    // //
+    // const car1 = new Car("BMW", 2000, 'black');
+    // // console.log(car1);
+    //
+    // // Object literals
+    // // const car1 = {model: 'BWM', year: 2000, color: 'Black'};
+    // // const car2 = {model: 'BWM', date: 2000, color: 'Black'};
+    // // console.log(car2);
+    // // Car.prototype.dongCo = '1.5';
+    // // console.log(car1.dongCo);
+    //
+    // const cars = [];
+    // cars.push(car1);
+    // cars.push(new Car("Audi", 2020, "white"));
+    // console.log(cars);
+    // let table = `<table border="1"><tr><th>Hãng</th><th>Năm sản xuất</th><th>Màu</th></tr>`;
+    // for (let i = 0; i < cars.length; i++) {
+    //     table += `<tr><td>${cars[i].model}</td><td>${cars[i].year}</td><td>${cars[i].color}</td></tr>`
+    // }
+    // table += "</table>";
+    // document.getElementById("table").innerHTML = table;
 </script>
 </body>
 </html>
